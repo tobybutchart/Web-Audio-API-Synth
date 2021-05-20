@@ -23,3 +23,5 @@ Synth made from Web Audio API. Using Tuna.js, Kontrol.js and Qwerty.js
 ## Roadmap
 Date | Issue | Status |
 :--: | ----- | ------ |
+20/05/2021 | Add start button to stop "The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page" warning | incomplete |
+20/05/2021 | drum machine | incomplete |
