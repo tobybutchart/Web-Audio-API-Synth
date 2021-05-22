@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Web Audio API Synth</title>
+        <link rel="icon" type="image/png" href="img/synth.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Toby Butchart">
+        <meta name="description" content="Synth made from Web Audio API. Using Tuna.js, Kontrol.js and Qwerty.js">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/synth.css">
+        <link href='https://fonts.googleapis.com/css?family=Oleo+Script' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Just+Another+Hand' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Lobster+Two' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Berkshire+Swash' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Arizonia' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Teko' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Pattaya' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=VT323' rel='stylesheet' type='text/css'>
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/tuna.min.js"></script>
+        <script type="text/javascript" src="js/kontrol.js"></script>
+        <script type="text/javascript" src="js/knob.min.js"></script>
+        <script type="text/javascript" src="js/qwerty.min.js"></script>
+        <script>
+            var AudioContext = window.AudioContext || window.webkitAudioContext;
+            var audioContext = new AudioContext();
+            var gainNode = audioContext.createGain();
+            var osc1;
+            var osc2;
+            var lfo1;
+            var keyboard;
+            var effects = {};
+            var oscillators = {};
+        </script>
+        <script type="text/javascript" src="js/effects.js"></script>
+        <script type="text/javascript" src="js/synth.js"></script>
+        <script type="text/javascript" src="js/patching.js"></script>
+        <script type="text/javascript" src="js/events.js"></script>
+    </head>
+    <body>
+        <h1>MIDI TEST</h1>
+        <script type="text/javascript">
+            navigator.requestMIDIAccess().then(onMIDISuccess, onMIDIFailure);
+
+            function onMIDIFailure() {
+                console.log('Could not access your MIDI devices.');
+            }
+
+            function onMIDISuccess(midiAccess) {
+                for (var input of midiAccess.inputs.values()){
+                    input.onmidimessage = getMIDIMessage;
+                }
+            }
+
+            function getMIDIMessage(message) {
+                var command = message.data[0];
+                var note = message.data[1];
+                var velocity = (message.data.length > 2) ? message.data[2] : 0; // a velocity value might not be included with a noteOff command
+
+                switch (command) {
+                    case 144: // noteOn
+                        if (velocity > 0) {
+                            noteOn(note, velocity);
+                        } else {
+                            noteOff(note);
+                        }
+                        break;
+                    case 128: // noteOff
+                        noteOff(note);
+                        break;
+                }
+            }
+
+            function noteOn(note) {
+                console.log(note);
+            }
+
+            function noteOff(note) {
+                console.log(note);
+            }
+        </script>
+    </body>
+</html>
