@@ -44,7 +44,11 @@ function getMIDIMessage(message) {
 
 function MIDINoteOn(note) {
     var frequency = noteToFreq(note);
-    startNote('', frequency);
+    if(note < 36 || note > 43){
+        startNote('', frequency);
+    }else{
+        playDrumSound(note);
+    }
 }
 
 function MIDINoteOff(note) {

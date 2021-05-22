@@ -1,7 +1,17 @@
 function createPatching(){
-    osc1.connect(gainNode);
-    osc2.connect(gainNode);
-    lfo1.connect(gainNode);
+    if(osc1){
+        osc1.connect(gainNode);
+    }
+    if(osc2){
+        osc2.connect(gainNode);
+    }
+    if(lfo1){
+        lfo1.connect(gainNode);
+    }
+
+    for (var audio in drmAudio) {
+         drmAudio[audio].connect(gainNode);
+    }
 
     gainNode.connect(window[effects[0].effectType]);
 

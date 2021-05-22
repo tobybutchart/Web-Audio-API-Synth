@@ -8,7 +8,8 @@
         <meta name="author" content="Toby Butchart">
         <meta name="description" content="Synth made from Web Audio API. Using Tuna.js, Kontrol.js and Qwerty.js">
         <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/synth.css">
+        <link rel="stylesheet" href="css/synth.min.css">
+        <link rel="stylesheet" href="css/drmz.min.css">
         <link href='https://fonts.googleapis.com/css?family=Oleo+Script' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Just+Another+Hand' rel='stylesheet' type='text/css'>
@@ -41,14 +42,85 @@
         </div>
         <div class="container">
             <div class="row">
-                <audio src="viper.mp3"></audio>
-                <!-- <button data-playing="false" role="switch" aria-checked="false">
+                 <!-- <audio src="viper.mp3"></audio>
+                 <button data-playing="false" role="switch" aria-checked="false">
                     <span>Play/Pause</span>
                 </button> -->
             </div>
         </div>
         <div class="container" style="padding-top:30px;">
             <div class="row" id="effects-rack">
+            </div>
+        </div>
+        <div class="container">
+            <div class="row" id="drum-machine" style="display: none;">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="background-color: #123456; padding-top: 30px; padding-bottom: 30px;">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-5" style="padding-top: 10px; text-align: center;">
+                        <img src="img/drmz5000.png">
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-7">
+
+
+
+
+                            <div class="col-sm-12">
+                                <div data-key="36" data-midi-key="36" class="col-sm-4 key">
+                                    <kbd>Q</kbd>
+                                    <span class="sound">Kick</span>
+                                </div>
+                                <div data-key="37" class="col-sm-4 key">
+                                    <kbd>W</kbd>
+                                    <span class="sound">Clap</span>
+                                </div>
+                                <div data-key="38" class="col-sm-4 key">
+                                    <kbd>E</kbd>
+                                    <span class="sound">Snare</span>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div data-key="39" class="col-sm-4 key">
+                                    <kbd>A</kbd>
+                                    <span class="sound">Hi Hat</span>
+                                </div>
+                                <div data-key="40" class="col-sm-4 key">
+                                    <kbd>S</kbd>
+                                    <span class="sound">Open Hat</span>
+                                </div>
+                                <div data-key="41" class="col-sm-4 key">
+                                    <kbd>D</kbd>
+                                    <span class="sound">Cow Bell</span>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div data-key="42" class="col-sm-4 key">
+                                    <kbd>Z</kbd>
+                                    <span class="sound">Hi Tom</span>
+                                </div>
+                                <div data-key="43" class="col-sm-4 key">
+                                    <kbd>X</kbd>
+                                    <span class="sound">Mid Tom</span>
+                                </div>
+                                <div data-key="44" class="col-sm-4 key">
+                                    <kbd>C</kbd>
+                                    <span class="sound">Lo Tom</span>
+                                </div>
+                            </div>
+                            <audio data-key="36" data-midi-key="36" src="audio/kick.wav"></audio>
+                            <audio data-key="37" src="audio/clap.wav"></audio>
+                            <audio data-key="38" src="audio/snare.wav"></audio>
+                            <audio data-key="39" src="audio/hihat.wav"></audio>
+                            <audio data-key="40" src="audio/openhat.wav"></audio>
+                            <audio data-key="41" src="audio/cowbell.wav"></audio>
+                            <audio data-key="42" src="audio/tomhi.wav"></audio>
+                            <audio data-key="43" src="audio/tommid.wav"></audio>
+                            <audio data-key="44" src="audio/tomlo.wav"></audio>
+
+
+
+
+
+                    </div>
+                </div>
             </div>
         </div>
         <div class="container">
@@ -216,9 +288,11 @@
             var keyboard;
             var effects = {};
             var oscillators = {};
+            var drmAudio = {};
             var canLoop = {1: true, 2: true};
         </script>
         <script type="text/javascript" src="js/effects.js"></script>
+        <script type="text/javascript" src="js/drmz.js"></script>
         <script type="text/javascript" src="js/synth.js"></script>
         <script type="text/javascript" src="js/patching.js"></script>
         <script type="text/javascript" src="js/events.js"></script>
@@ -231,6 +305,7 @@
             function loadSynth(){
                 createAudioContext();
                 createRackEffects();
+                createDrumMachine();
                 createSynth();
                 setEvents();
                 setMIDI();

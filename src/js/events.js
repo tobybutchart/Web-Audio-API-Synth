@@ -73,7 +73,11 @@ function setEvents(){
     });
 
     keyboard.keyDown = function (note, frequency) {
-        startNote(note, frequency);
+        if(note < 36 || note > 43){
+            startNote(note, frequency);
+        }else{
+            playDrumSound(note);
+        }
     };
 
     keyboard.keyUp = function (note, frequency) {
