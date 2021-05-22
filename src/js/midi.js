@@ -1,10 +1,14 @@
 /*https://gist.github.com/YuxiUx/ef84328d95b10d0fcbf537de77b936cd*/
 /*I had to rewrite this as my stupid minifyer didn't like the exponentiation ** operator*/
-function noteToFreq(note) {
+function midiNoteToFreq(note) {
     var a = 440;
     var b = (a / 32);
     var c = ((note - 9) / 12);
     return b * Math.pow(2, c);
+}
+
+function freqToMidiNote(frequency) {
+     return Math.round(69 + 12 * Math.log2(frequency / 440));
 }
 
 function setMIDI() {
@@ -43,7 +47,7 @@ function getMIDIMessage(message) {
 }
 
 function MIDINoteOn(note) {
-    var frequency = noteToFreq(note);
+    var frequency = midiNoteToFreq(note);
     if(note < 36 || note > 43){
         startNote('', frequency);
     }else{
@@ -52,6 +56,6 @@ function MIDINoteOn(note) {
 }
 
 function MIDINoteOff(note) {
-    var frequency = noteToFreq(note);
+    var frequency = midiNoteToFreq(note);
     stopNote('', frequency);
 }

@@ -73,7 +73,10 @@ function setEvents(){
     });
 
     keyboard.keyDown = function (note, frequency) {
-        if(note < 36 || note > 43){
+        var midiNote = freqToMidiNote(frequency);
+
+        /*stops keyboard clashing with drum sounds*/
+        if(![60, 61, 62, 63, 64, 68].includes(midiNote)){
             startNote(note, frequency);
         }else{
             playDrumSound(note);

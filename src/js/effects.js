@@ -92,6 +92,71 @@ effects = [{
         ]
     },*/
     {
+        "effectType":"delay",
+        "backgroundColor":"#000000",
+        "labelText":"Delay",
+        "controlForegroundColor":"#B22222",
+        "controlBackgroundColor":"#424254",
+        "fontFamily":"Just Another Hand",
+        "controls":[
+            {
+                "controlName":"delayFeedback",
+                "min":"0",
+                "max":"1",
+                "value":"0.25",
+                "step":"0.01",
+                "controlText":"Feedback",
+                "controlProperty":"feedback"
+            },
+            {
+                "controlName":"delayDelay",
+                "min":"0",
+                "max":"10000",
+                "value":"250",
+                "step":"50",
+                "controlText":"Delay",
+                "controlProperty":"delayTime"
+            },
+
+            {
+                "controlName":"delayWet",
+                "min":"0",
+                "max":"1",
+                "value":"0.5",
+                "step":"0.01",
+                "controlText":"Wet",
+                "controlProperty":"wet"
+            },
+            {
+                "controlName":"delayDry",
+                "min":"0",
+                "max":"1",
+                "value":"0.5",
+                "step":"0.01",
+                "controlText":"Dry",
+                "controlProperty":"dry"
+            },
+            {
+                "controlName":"delayCutoff",
+                "min":"20",
+                "max":"22000",
+                "value":"2000",
+                "step":"10",
+                "controlText":"Cutoff",
+                "controlProperty":"cutoff"
+            },
+            {
+                "controlName":"delayBypass",
+                "min":"0",
+                "max":"1",
+                "value":"1",
+                "step":"1",
+                "controlText":"Bypass",
+                "controlProperty":"bypass"
+            }
+        ]
+    },
+    {
     "effectType":"chorus",
     "backgroundColor":"#134993",
     "labelText":"Chorus",
@@ -128,71 +193,6 @@ effects = [{
         },
         {
             "controlName":"chorusBypass",
-            "min":"0",
-            "max":"1",
-            "value":"1",
-            "step":"1",
-            "controlText":"Bypass",
-            "controlProperty":"bypass"
-        }
-    ]
-},
-{
-    "effectType":"delay",
-    "backgroundColor":"#000000",
-    "labelText":"Delay",
-    "controlForegroundColor":"#B22222",
-    "controlBackgroundColor":"#424254",
-    "fontFamily":"Just Another Hand",
-    "controls":[
-        {
-            "controlName":"delayFeedback",
-            "min":"0",
-            "max":"1",
-            "value":"0.25",
-            "step":"0.01",
-            "controlText":"Feedback",
-            "controlProperty":"feedback"
-        },
-        {
-            "controlName":"delayDelay",
-            "min":"0",
-            "max":"10000",
-            "value":"250",
-            "step":"50",
-            "controlText":"Delay",
-            "controlProperty":"delayTime"
-        },
-
-        {
-            "controlName":"delayWet",
-            "min":"0",
-            "max":"1",
-            "value":"0.5",
-            "step":"0.01",
-            "controlText":"Wet",
-            "controlProperty":"wet"
-        },
-        {
-            "controlName":"delayDry",
-            "min":"0",
-            "max":"1",
-            "value":"0.5",
-            "step":"0.01",
-            "controlText":"Dry",
-            "controlProperty":"dry"
-        },
-        {
-            "controlName":"delayCutoff",
-            "min":"20",
-            "max":"22000",
-            "value":"2000",
-            "step":"10",
-            "controlText":"Cutoff",
-            "controlProperty":"cutoff"
-        },
-        {
-            "controlName":"delayBypass",
             "min":"0",
             "max":"1",
             "value":"1",
