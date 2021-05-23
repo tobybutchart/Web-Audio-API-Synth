@@ -66,5 +66,5 @@ const keys = document.querySelectorAll('.key');
 for(var i = 0; i < keys.length; i++){
     keys[i].addEventListener('transitionend', removeTransition);
     keys[i].addEventListener('click', playDrumSoundFromElement);
-    keys[i].addEventListener('touchstart', playDrumSoundFromElement);
+    // keys[i].addEventListener('touchstart', playDrumSoundFromElement);
 }
