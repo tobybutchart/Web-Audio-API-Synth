@@ -21,8 +21,14 @@ function playDrumSound(note){
 }
 
 function playDrumSoundFromElement(e){
+    //if from KeyboardEvent
     if(e && e.key && keyboardMap[e.key]){
         e = document.querySelector('audio[data-key="'+keyboardMap[e.key]+'"]');
+    }
+
+    //if from MouseEvent
+    if(e && e.srcElement && e.srcElement.dataset && e.srcElement.dataset.key){
+        e = document.querySelector('audio[data-key="'+e.srcElement.dataset.key+'"]');
     }
 
     if(!e || !e.dataset || !e.dataset.key){
@@ -59,4 +65,6 @@ window.addEventListener('keydown', playDrumSoundFromElement);
 const keys = document.querySelectorAll('.key');
 for(var i = 0; i < keys.length; i++){
     keys[i].addEventListener('transitionend', removeTransition);
+    keys[i].addEventListener('click', playDrumSoundFromElement);
+    keys[i].addEventListener('touchstart', playDrumSoundFromElement);
 }
