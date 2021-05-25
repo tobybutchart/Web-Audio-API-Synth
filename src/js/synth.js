@@ -1,7 +1,12 @@
 function createSynth(){
+    const keyboardNode = document.getElementById("keyboard");
+    keyboardNode.innerHTML = '';
+
+    const parentWidth = $('#keyboard-enclosure').width();
+
     keyboard = new QwertyHancock({
          id: 'keyboard',
-         /*width: 1200,*/
+         width: parentWidth,
          height: 250,
          octaves: 2,
          startNote: 'C4'

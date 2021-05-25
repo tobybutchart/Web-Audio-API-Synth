@@ -25,5 +25,6 @@ Date | Issue | Status |
 :--: | ----- | ------ |
 20/05/2021 | Add start button to stop "The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page" warning | complete - 22/05/2021 |
 20/05/2021 | Drum machine | completed - 22/05/2021 |
-20/05/2021 | Make mobile friendly | incomplete |
-20/05/2021 | Refactor, refactor, refactor | complete - 22/05/2021 |
+20/05/2021 | Make mobile friendly | completed - 25/05/2021 |
+20/05/2021 | Refactor, refactor, refactor | completed - 22/05/2021 |
+25/05/2021 | Midi effect control | incomplete |

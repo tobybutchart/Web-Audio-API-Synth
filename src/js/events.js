@@ -1,13 +1,30 @@
 $(window).resize(function(){
     var parentWidth = $('#div-custom-osc1').width();
-    $('#bars-custom-osc1').trigger("configure", {width:parentWidth});
+    $('#bars-custom-osc1').trigger("configure", {"width":parentWidth});
 
     var parentWidth = $('#div-custom-osc2').width();
-    $('#bars-custom-osc2').trigger("configure", {width:parentWidth});
+    $('#bars-custom-osc2').trigger("configure", {"width":parentWidth});
 
     var parentWidth = $('#div-lfo1').width();
-    $('#xy-lfo1').trigger("configure", {width:parentWidth});
+    $('#xy-lfo1').trigger("configure", {"width":parentWidth});
+
+    resizeEffectDials();
+    resizeXYBar();
+    createSynth();
 });
+
+function resizeEffectDials(){
+    if($( window ).width() > 567){
+        $('.effect-dial').trigger('configure',{"width":80, "height":80});
+    }else{
+        $('.effect-dial').trigger('configure',{"width":60, "height":60});
+    }
+}
+
+function resizeXYBar(){
+    var parentWidth = $('#div-lfo1').width();
+    $('#xy-lfo1').trigger("configure", {width:parentWidth});
+}
 
 function setOsc(waveform, osc, barsID, frequency){
     osc.frequency.setTargetAtTime(frequency, audioContext.currentTime, 0);
@@ -72,15 +89,12 @@ function setEvents(){
         }
     });
 
-    keyboard.keyDown = function (note, frequency) {
-        var midiNote = freqToMidiNote(frequency);
+    resizeEffectDials();
+    resizeXYBar();
 
-        /*stops keyboard clashing with drum sounds*/
-        //if(![60, 61, 62, 63, 64, 68].includes(midiNote)){
-            startNote(note, frequency);
-        //}else{
-            playDrumSound(note);
-        //}
+    keyboard.keyDown = function (note, frequency) {
+        startNote(note, frequency);
+        playDrumSound(note);
     };
 
     keyboard.keyUp = function (note, frequency) {

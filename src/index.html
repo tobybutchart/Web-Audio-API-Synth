@@ -40,14 +40,6 @@
                 </div>
             </div>
         </div>
-        <div class="container">
-            <div class="row">
-                 <!-- <audio src="viper.mp3"></audio>
-                 <button data-playing="false" role="switch" aria-checked="false">
-                    <span>Play/Pause</span>
-                </button> -->
-            </div>
-        </div>
         <div class="container" style="padding-top:30px;">
             <div class="row" id="effects-rack">
             </div>
@@ -55,75 +47,60 @@
         <div class="container">
             <div class="row" id="drum-machine" style="display: none;">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="background-color: #123456; padding-top: 30px; padding-bottom: 30px;">
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-5" style="padding-top: 10px; text-align: center;">
-                        <img src="img/drmz5000.png">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-5" style="padding-top: 5px; padding-bottom: 5px; text-align: center;">
+                        <img src="img/drmz5000.png" style="width: 100%; max-width: 405px;">
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-7">
-
-
-
-
-                            <div class="col-sm-12">
-                                <div data-key="36" class="col-sm-4 key">
-                                    <kbd data-key="36">Q</kbd>
-                                    <span data-key="36" class="sound">Kick</span>
-                                </div>
-                                <div data-key="37" class="col-sm-4 key">
-                                    <kbd data-key="37">W</kbd>
-                                    <span data-key="37" class="sound">Clap</span>
-                                </div>
-                                <div data-key="38" class="col-sm-4 key">
-                                    <kbd data-key="38">E</kbd>
-                                    <span data-key="38" class="sound">Snare</span>
-                                </div>
-                            </div>
-                            <div class="col-sm-12">
-                                <div data-key="39" class="col-sm-4 key">
-                                    <kbd data-key="39">A</kbd>
-                                    <span data-key="39" class="sound">Hi Hat</span>
-                                </div>
-                                <div data-key="40" class="col-sm-4 key">
-                                    <kbd data-key="40">S</kbd>
-                                    <span data-key="40" class="sound">Open Hat</span>
-                                </div>
-                                <div data-key="41" class="col-sm-4 key">
-                                    <kbd data-key="41">D</kbd>
-                                    <span data-key="41" class="sound">Cow Bell</span>
-                                </div>
-                            </div>
-                            <div class="col-sm-12">
-                                <div data-key="42" class="col-sm-4 key">
-                                    <kbd data-key="42">Z</kbd>
-                                    <span data-key="42" class="sound">Hi Tom</span>
-                                </div>
-                                <div data-key="43" class="col-sm-4 key">
-                                    <kbd data-key="43">X</kbd>
-                                    <span data-key="43" class="sound">Mid Tom</span>
-                                </div>
-                                <div data-key="44" class="col-sm-4 key">
-                                    <kbd data-key="44">C</kbd>
-                                    <span data-key="44" class="sound">Lo Tom</span>
-                                </div>
-                            </div>
-                            <audio data-key="36" src="audio/kick.wav"></audio>
-                            <audio data-key="37" src="audio/clap.wav"></audio>
-                            <audio data-key="38" src="audio/snare.wav"></audio>
-                            <audio data-key="39" src="audio/hihat.wav"></audio>
-                            <audio data-key="40" src="audio/openhat.wav"></audio>
-                            <audio data-key="41" src="audio/cowbell.wav"></audio>
-                            <audio data-key="42" src="audio/tomhi.wav"></audio>
-                            <audio data-key="43" src="audio/tommid.wav"></audio>
-                            <audio data-key="44" src="audio/tomlo.wav"></audio>
-
-
-
-
-
+                        <div data-key="36" class="key">
+                            <kbd data-key="36">Q</kbd>
+                            <span data-key="36" class="sound">Kick</span>
+                        </div>
+                        <div data-key="37" class="key">
+                            <kbd data-key="37">W</kbd>
+                            <span data-key="37" class="sound">Clap</span>
+                        </div>
+                        <div data-key="38" class="key">
+                            <kbd data-key="38">E</kbd>
+                            <span data-key="38" class="sound">Snare</span>
+                        </div>
+                        <div data-key="39" class="key">
+                            <kbd data-key="39">A</kbd>
+                            <span data-key="39" class="sound">Hi Hat</span>
+                        </div>
+                        <div data-key="40" class="key">
+                            <kbd data-key="40">S</kbd>
+                            <span data-key="40" class="sound">Open Hat</span>
+                        </div>
+                        <div data-key="41" class="key">
+                            <kbd data-key="41">D</kbd>
+                            <span data-key="41" class="sound">Cow Bell</span>
+                        </div>
+                        <div data-key="42" class="key">
+                            <kbd data-key="42">Z</kbd>
+                            <span data-key="42" class="sound">Hi Tom</span>
+                        </div>
+                        <div data-key="43" class="key">
+                            <kbd data-key="43">X</kbd>
+                            <span data-key="43" class="sound">Mid Tom</span>
+                        </div>
+                        <div data-key="44" class="key">
+                            <kbd data-key="44">C</kbd>
+                            <span data-key="44" class="sound">Lo Tom</span>
+                        </div>
+                        <audio data-key="36" src="audio/kick.wav"></audio>
+                        <audio data-key="37" src="audio/clap.wav"></audio>
+                        <audio data-key="38" src="audio/snare.wav"></audio>
+                        <audio data-key="39" src="audio/hihat.wav"></audio>
+                        <audio data-key="40" src="audio/openhat.wav"></audio>
+                        <audio data-key="41" src="audio/cowbell.wav"></audio>
+                        <audio data-key="42" src="audio/tomhi.wav"></audio>
+                        <audio data-key="43" src="audio/tommid.wav"></audio>
+                        <audio data-key="44" src="audio/tomlo.wav"></audio>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="container">
+        <div class="container" style="overflow: hidden;">
             <div class="row" id="synth-effects" style="display: none;">
                 <div class="col-xs-12 col-sm-6 synth-background" style="padding-bottom:30px;">
                     <h1 class="synth-text">OSC 1</h1>
@@ -160,22 +137,22 @@
                         <br>
                         <fieldset id="bars-custom-osc1" class="bars bar-osc1">
                             <legend>Custom Waveform Osc. 1</legend>
-                            <input value=-50>
-                            <input value=-40>
-                            <input value=-30>
-                            <input value=-20>
-                            <input value=-10>
-                            <input value=0>
-                            <input value=10>
-                            <input value=20>
-                            <input value=30>
-                            <input value=40>
-                            <input value=50>
-                            <input value=60>
-                            <input value=70>
-                            <input value=80>
-                            <input value=90>
-                            <input value=100>
+                            <input value=-50 style="display: none;">
+                            <input value=-40 style="display: none;">
+                            <input value=-30 style="display: none;">
+                            <input value=-20 style="display: none;">
+                            <input value=-10 style="display: none;">
+                            <input value=0 style="display: none;">
+                            <input value=10 style="display: none;">
+                            <input value=20 style="display: none;">
+                            <input value=30 style="display: none;">
+                            <input value=40 style="display: none;">
+                            <input value=50 style="display: none;">
+                            <input value=60 style="display: none;">
+                            <input value=70 style="display: none;">
+                            <input value=80 style="display: none;">
+                            <input value=90 style="display: none;">
+                            <input value=100 style="display: none;">
                         </fieldset>
                     </div>
                 </div>
@@ -215,22 +192,22 @@
                         <br>
                         <fieldset id="bars-custom-osc2" class="bars bar-osc2">
                             <legend>Custom Waveform Osc. 2</legend>
-                            <input value=100>
-                            <input value=90>
-                            <input value=80>
-                            <input value=70>
-                            <input value=60>
-                            <input value=50>
-                            <input value=40>
-                            <input value=30>
-                            <input value=20>
-                            <input value=10>
-                            <input value=0>
-                            <input value=-10>
-                            <input value=-20>
-                            <input value=-30>
-                            <input value=-40>
-                            <input value=-50>
+                            <input value=100 style="display: none;">
+                            <input value=90 style="display: none;">
+                            <input value=80 style="display: none;">
+                            <input value=70 style="display: none;">
+                            <input value=60 style="display: none;">
+                            <input value=50 style="display: none;">
+                            <input value=40 style="display: none;">
+                            <input value=30 style="display: none;">
+                            <input value=20 style="display: none;">
+                            <input value=10 style="display: none;">
+                            <input value=0 style="display: none;">
+                            <input value=-10 style="display: none;">
+                            <input value=-20 style="display: none;">
+                            <input value=-30 style="display: none;">
+                            <input value=-40 style="display: none;">
+                            <input value=-50 style="display: none;">
                         </fieldset>
                     </div>
                  </div>
@@ -256,9 +233,9 @@
                              data-bgColor="#123456"
                              data-width="1130"
                              data-height="180">
-                             <legend>Frequency / amplitude</legend>
-                             Frequency<input id="lfo1-freq" name="x" value=0>
-                             Amplitude<input id="lfo1-amp" name="y" value=0>
+                             <legend style="display: none;">Frequency / amplitude</legend>
+                             <input id="lfo1-freq" name="x" value=0 style="display: none;">
+                             <input id="lfo1-amp" name="y" value=0 style="display: none;">
                          </fieldset>
                      </div>
                      <hr>
@@ -267,7 +244,7 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-xs-12" style="margin-bottom: 30px;">
+                <div class="col-xs-12" id="keyboard-enclosure" style="margin-bottom: 30px;">
                     <div id="keyboard"></div>
                 </div>
             </div>
@@ -291,12 +268,12 @@
             var drmAudio = {};
             var canLoop = {1: true, 2: true};
         </script>
-        <script type="text/javascript" src="js/effects.js"></script>
-        <script type="text/javascript" src="js/drmz.js"></script>
-        <script type="text/javascript" src="js/synth.js"></script>
-        <script type="text/javascript" src="js/patching.js"></script>
-        <script type="text/javascript" src="js/events.js"></script>
-        <script type="text/javascript" src="js/midi.js"></script>
+        <script type="text/javascript" src="js/effects.min.js"></script>
+        <script type="text/javascript" src="js/drmz.min.js"></script>
+        <script type="text/javascript" src="js/synth.min.js"></script>
+        <script type="text/javascript" src="js/patching.min.js"></script>
+        <script type="text/javascript" src="js/events.min.js"></script>
+        <script type="text/javascript" src="js/midi.min.js"></script>
         <script>
             function createAudioContext(){
                 audioContext.resume();

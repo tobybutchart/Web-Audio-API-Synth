@@ -1,19 +1,49 @@
 .key {
     border: .4rem solid black;
     border-radius: .5rem;
-    margin: 1rem;
+    margin: 4px;/*1rem;*/
     font-size: 1.5rem;
     padding: 1rem .5rem;
     transition: all .07s ease;
-    width: 15rem;
+    /* width: 15rem; */
+    /* width: 100%; */
     text-align: center;
     color: white;
     background: rgba(0,0,0,1);
     text-shadow: 0 0 .5rem black;
+    display: block;
 }
 
 .playing {
     transform: scale(1.1);
     border-color: #ffc600;
     box-shadow: 0 0 1rem #ffc600;
+}
+
+/* Small devices (landscape phones, 576px and up)                 */
+@media (min-width: 576px) {
+    .key {
+        width: 31%;
+        display: inline-block;
+    }
+}
+
+/* Medium devices (tablets, 768px and up)                         */
+@media (min-width: 768px) {
+
+}
+
+/* Large devices (desktops, 992px and up)                         */
+@media (min-width: 992px) {
+
+}
+
+/* X-Large devices (large desktops, 1200px and up)                */
+@media (min-width: 1200px) {
+
+}
+
+/* XX-Large devices (larger desktops, 1400px and up)              */
+@media (min-width: 1400px) {
+
 }
