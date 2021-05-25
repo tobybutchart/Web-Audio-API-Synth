@@ -706,7 +706,8 @@ function createRackEffects(){
                 var tableControlsLabel = document.createElement("label");
                 var tableControlsLabelText = document.createTextNode(control.controlText);
                 tableControlsLabel.classList.add(effect.effectType+"-text-sm");
-                tableControlsLabel.style.fontSize = "24px";
+                tableControlsLabel.classList.add("effect-text-sm");
+                // tableControlsLabel.style.fontSize = "24px";
                 tableControlsLabel.style.fontFamily = effect.fontFamily;
                 tableControlsLabel.style.color = effect.controlForegroundColor;
                 tableControlsLabel.setAttribute("for", control.controlName);

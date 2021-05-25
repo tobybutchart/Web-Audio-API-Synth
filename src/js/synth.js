@@ -3,12 +3,21 @@ function createSynth(){
     keyboardNode.innerHTML = '';
 
     const parentWidth = $('#keyboard-enclosure').width();
+    var octaveCount;
+
+    if(parentWidth < 576){
+        octaveCount = 1;
+    }else if(parentWidth < 992){
+        octaveCount = 2;
+    }else{
+        octaveCount = 3;
+    }
 
     keyboard = new QwertyHancock({
          id: 'keyboard',
          width: parentWidth,
          height: 250,
-         octaves: 2,
+         octaves: octaveCount,
          startNote: 'C4'
     });
 
